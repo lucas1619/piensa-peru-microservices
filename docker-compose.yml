@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  envoygateway:
+        build: Envoy/
+        ports:
+          - "9902:9902"
+          - "10000:10000"         
+        volumes:
+          - ./Envoy/envoy.yaml:/etc/envoy/envoy.yaml
+  piensaperu.administrationservice:
+    image: ${DOCKER_REGISTRY-}piensaperuadministratorservice
+    build:
+      context: .
+      dockerfile: PiensaPeru.AdministratorService/Dockerfile
+    ports:
+      - '8090:80'
+
+  piensaperu.users:
+    image: ${DOCKER_REGISTRY-}piensaperuusers
+    build:
+      context: .
+      dockerfile: PiensaPeru.Users/Dockerfile
+    ports:
+      - '8084:80'
+
+
+  piensaperu.content:
+    image: ${DOCKER_REGISTRY-}piensaperucontent
+    build:
+      context: .
+      dockerfile: PiensaPeru.Content/Dockerfile
+    ports:
+      - '8086:80'
+
+
+  piensaperu.supervisor:
+    image: ${DOCKER_REGISTRY-}piensaperusupervisor
+    build:
+      context: .
+      dockerfile: PiensaPeru.Supervisor/Dockerfile
+    ports:
+      - '8088:80'
+
