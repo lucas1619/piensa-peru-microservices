@@ -38,11 +38,6 @@ static_resources:
                   prefix_rewrite: "/weatherforecastadministrator"
                   cluster: serviceadministrator
               - match:
-                  prefix: "/serviceuser"
-                route:
-                  prefix_rewrite: "/weatherforecastuser"
-                  cluster: serviceusers
-              - match:
                   prefix: "/"
                 route:
                   host_rewrite_literal: www.envoyproxy.io
@@ -63,21 +58,6 @@ static_resources:
             address:
               socket_address:
                 address: piensaperu.administrationservice
-                port_value: 80 
-
-  - name: serviceusers
-    connect_timeout: 0.25s
-    type: LOGICAL_DNS    
-    dns_lookup_family: V4_ONLY
-    lb_policy: ROUND_ROBIN
-    load_assignment:
-      cluster_name: servicea
-      endpoints:
-      - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: piensaperu.users
                 port_value: 80 
 
   - name: service_envoyproxy_io

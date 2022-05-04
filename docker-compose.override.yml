@@ -1,13 +1,6 @@
 version: '3.4'
 
 services:
-  piensaperu.users:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
-
   piensaperu.content:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -16,6 +9,13 @@ services:
 
 
   piensaperu.supervisor:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  piensaperu.usersservice:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:

@@ -4,19 +4,19 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:3172",
+      "applicationUrl": "http://localhost:54558",
       "sslPort": 0
     }
   },
   "profiles": {
-    "PiensaPeru.Users": {
+    "PiensaPeru.UsersService": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5073",
+      "applicationUrl": "http://localhost:5248",
       "dotnetRunMessages": true
     },
     "IIS Express": {

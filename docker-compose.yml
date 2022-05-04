@@ -15,15 +15,14 @@ services:
       dockerfile: PiensaPeru.AdministratorService/Dockerfile
     ports:
       - '8090:80'
-
-  piensaperu.users:
-    image: ${DOCKER_REGISTRY-}piensaperuusers
+  
+  piensaperu.usersservice:
+    image: ${DOCKER_REGISTRY-}piensaperuusersservice
     build:
       context: .
-      dockerfile: PiensaPeru.Users/Dockerfile
+      dockerfile: PiensaPeru.UsersService/Dockerfile
     ports:
-      - '8084:80'
-
+      - '8092:80'
 
   piensaperu.content:
     image: ${DOCKER_REGISTRY-}piensaperucontent

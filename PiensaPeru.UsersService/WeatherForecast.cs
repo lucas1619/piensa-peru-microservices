@@ -1,4 +1,4 @@
-namespace PiensaPeru.Users
+namespace PiensaPeru.UsersService
 {
     public class WeatherForecast
     {
